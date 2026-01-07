@@ -1,0 +1,225 @@
+/* ================= RESET & BODY ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    /* Penting: Mencegah horizontal scrollbar dari elemen yang over-width */
+    overflow-x: hidden; 
+}
+
+/* --- TEMA DEFAULT (LIGHT MODE) --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f9; /* Latar Belakang Luar Light Mode */
+    color: #343a40; /* Teks Light Mode */
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus */
+}
+
+/* ================= HEADER FULL LAYAR (DESKTOP/DEFAULT) ================= */
+.main-header {
+    width: 189%; 
+    background-color: #4e73df;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.main-header h1 a,
+.main-header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 🛠️ PERBAIKAN: Mini Todo App agak ke atas/sejajar (dipertahankan) */
+.main-header h1 {
+    margin: 0; 
+}
+
+.main-header nav a {
+    margin-left: 27px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.main-header nav a:hover {
+    background: rgba(255,255,255,.15);
+}
+
+/* ================= MAIN FULL LAYAR (DESKTOP/DEFAULT) ================= */
+main {
+    width: 100%; 
+    padding: 40px; 
+    min-height: calc(100vh - 64px); 
+}
+
+/* ================= PAGE CONTAINER FULL LAYAR (DESKTOP/DEFAULT) ================= */
+.page-container {
+    width: 197%; 
+    max-width: none; 
+    background: white; /* Card Light Mode */
+    padding: 40px; 
+    border-radius: 0; 
+    box-shadow: none; 
+    margin: 0; 
+}
+
+/* 🛠️ PERBAIKAN: Tugas Harian agak ke atas (dipertahankan) */
+.page-container h1 {
+    margin-top: 0;
+    margin-bottom: 25px; 
+}
+
+/* ================= TODO (LIGHT MODE) ================= */
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    width: 100%; 
+}
+
+.todo-input {
+    flex: 1; 
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background: white;
+    color: #343a40;
+}
+
+.btn-add {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa; /* Item Background Light Mode */
+    border-left: 5px solid #4e73df;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* ================= FILTER ================= */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters .btn-clear {
+    margin-left: auto;
+    cursor: pointer;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* ------------------------------------------------------------ */
+/* --- TEMA GELAP (DARK MODE) --- */
+/* Diaktifkan saat body memiliki class="dark" */
+/* ------------------------------------------------------------ */
+
+body.dark {
+    background: #121212; /* Latar Belakang Luar menjadi gelap */
+    color: #e0e0e0; /* Teks menjadi terang */
+}
+
+body.dark .main-header {
+    background-color: #1f1f1f; /* Header Darker */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .main-header h1 a,
+body.dark .main-header nav a {
+    color: #e0e0e0;
+}
+
+body.dark .page-container {
+    background: #1e1e1e; /* Card putih menjadi gelap */
+}
+
+body.dark .todo-input {
+    background: #282828;
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+
+body.dark .todo-item {
+    background: #222222; /* Item todo menjadi lebih gelap */
+    border-left-color: #7b9cff; /* Border tetap biru tapi lebih terang */
+}
+
+body.dark .btn-add {
+    background: #00b386; /* Warna tambah agak berbeda di dark mode */
+}
+
+body.dark .filters .btn-clear {
+    background: #b83226; 
+}
+
+/* Styling untuk tombol pengalih tema (jika menggunakan ThemeSwitcher.js) */
+.btn-theme-switch {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn-theme-switch:hover {
+    background: rgba(255,255,255,.15);
+}
+
+
+/* ================= MOBILE ONLY (RESPONSIVITAS) ================= */
+@media (max-width: 600px) {
+    /* (Pengaturan mobile tetap sama dan dipertahankan) */
+    .main-header {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .main-header nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-header nav a {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .btn-add {
+        width: 100%;
+    }
+}
