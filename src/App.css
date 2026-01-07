@@ -223,3 +223,48 @@ body.dark .filters .btn-clear {
         width: 100%;
     }
 }
+/* ================= TAMBAHAN RESPONSIVE CONTROL ================= */
+
+/* 📱 HP kecil (≤ 480px) */
+@media (max-width: 480px) {
+    .main-header,
+    .page-container {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+/* 📱 HP besar & tablet kecil (480–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .main-header,
+    .page-container {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/* 🧾 Tablet (768–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-header,
+    .page-container {
+        width: 110%;
+    }
+}
+
+/* 🖥️ Desktop normal (1024–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .main-header,
+    .page-container {
+        width: 120%;
+    }
+}
+
+/* 🖥️💡 Desktop besar (≥ 1440px) */
+@media (min-width: 1441px) {
+    .main-header,
+    .page-container {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
